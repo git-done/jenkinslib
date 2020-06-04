@@ -26,6 +26,7 @@
 				timeout(time:5,unit:"MINUTES"){//步骤超时时间
 					script{// 填写运行代码
 						println('获取代码')
+						tools.PrintMes('获取代码','green')
 						println('${test}')
 						
 						input id: 'Task', message: '我们要继续吗？', ok: '是的，继续', parameters: [choice(choices: ['p1', 'p2'], description: '', name: 'task')], submitter: 'admin,wangshuai'
@@ -43,7 +44,7 @@
 						timeout(time:20,unit:"MINUTES"){
 							script{
 								println('应用打包')
-								
+								tools.PrintMes('应用打包','green')
 								mvnHome = tool "m2"
 								println(mvnHome)
 								
@@ -57,8 +58,8 @@
 						timeout(time:30,unit:"MINUTES"){
 							script{
 								println('代码扫描')
-								
-								tools.PrintMes("this is my lib!")
+								tools.PrintMes('代码扫描','green')
+								tools.PrintMes("this is my lib!",'green')
 							}
 						}
 					}
