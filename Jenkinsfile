@@ -3,7 +3,7 @@
  def tools = new org.devops.tools()
  
  String workspace = 'opt/jenkins/workspace'
- 
+ hello()
  //Pipline
  pipeline {
 	agent { node { label "master" //指定运行节点的标签或者名称
